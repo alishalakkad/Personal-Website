@@ -1,1 +1,494 @@
+<!DOCTYPE html>
+<html>
+        <title>Alisha Lakkad</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <style>
+
+/*this is for slideshow*/
+        * {box-sizing: border-box}
+        body {font-family: Verdana, sans-serif; margin:0}
+        .mySlides {display: none}
+        img {vertical-align: middle;}
+
+        /* Slideshow container */
+        .slideshow-container {
+                max-width: 1000px;
+                position: relative;
+                margin: auto;
+        }
+
+        /* Next & previous buttons */
+        .prev, .next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -22px;
+                color: white;
+                font-weight: bold;
+                font-size: 18px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+        }
+
+        /* On hover, add a black background color with a little bit see-through */
+        .prev:hover, .next:hover {
+                background-color: rgba(0,0,0,0.8);
+        }
+
+        /* Caption text */
+        .text {
+                color: black;
+                font-size: 15px;
+                padding: 8px 12px;
+                position: absolute;
+                bottom: 8px;
+                width: 100%;
+
+                /* text-align: center;*/
+        }
+          
+            /* Number text (1/3 etc) */
+        .numbertext {
+                color: #f2f2f2;
+                font-size: 12px;
+                padding: 8px 12px;
+                position: absolute;
+                top: 0;
+        }
+
+        /* The dots/bullets/indicators */
+        .dot {
+                cursor: pointer;
+                height: 15px;
+                width: 15px;
+                margin: 0 2px;
+                background-color: #bbb;
+                border-radius: 50%;
+                display: inline-block;
+                transition: background-color 0.6s ease;
+        }
+
+        .active, .dot:hover {
+                background-color: #717171;
+        }
+
+        /* Fading animation */
+        .fade {
+                -webkit-animation-name: fade;
+                -webkit-animation-duration: 1.5s;
+                animation-name: fade;
+                animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+        }
+
+        @keyframes fade {
+                from {opacity: .4}
+                to {opacity: 1}
+        }
+
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+                .prev, .next,.text {font-size: 11px}
+        }
+        /*end slideshpw*/
+        body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
+        body, html {
+                height: 100%;
+                color: #777;
+                line-height: 1.8;
+        }
+
+        /* Create a Parallax Effect */
+        .bgimg-1, .bgimg-2, .bgimg-3 {
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+        }
+            /* First image (Logo. Full height) */
+        .bgimg-1 {
+                background-image: url('https://mediad.publicbroadcasting.net/p/wbaa/files/styles/x_large/public/201803/PURSTOCK.jpg');
+                min-height: 100%;
+        }
+
+        /* Second image (Portfolio) */
+        .bgimg-2 {
+                background-image: url("/w3images/parallax2.jpg");
+                min-height: 400px;
+        }
+
+        /* Third image (Contact) */
+        .bgimg-3 {
+                background-image: url("/w3images/parallax3.jpg");
+                min-height: 400px;
+        }
+
+        .w3-wide {letter-spacing: 10px;}
+        .w3-hover-opacity {cursor: pointer;}
+
+        /* Turn off parallax scrolling for tablets and phones */
+        @media only screen and (max-device-width: 1600px) {
+                .bgimg-1, .bgimg-2, .bgimg-3 {
+                        background-attachment: scroll;
+                        min-height: 400px;
+                }
+        }
+        </style>
+        <body>
+
+                <!-- Navbar (sit on top) -->
+                <div class="w3-top">
+                        <div class="w3-bar" id="myNavbar" style="color: white;">
+                                <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
+                                        <i class="fa fa-bars"></i>
+                                </a>
+                                <a href="#home" class="w3-bar-item w3-button">HOME</a>
+                                <a href="#about" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-user"></i> ABOUT</a>
+                                <a href="#campusinvolvements" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> CAMPUS INVOLVEMENTS</a>
+                                <a href="#projects" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PROJECTS</a>
+                                <a href="#contact" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-envelope"></i> CONTACT</a>
+                                </a>
+                        </div>
+
+                        <!-- Navbar on small screens -->
+                        <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
+                                <a href="#about" class="w3-bar-item w3-button" onclick="toggleFunction()">ABOUT</a>
+                                <a href="#campusinvolvements" class="w3-bar-item w3-button" onclick="toggleFunction()"> CAMPUS INVOLVEMENTS</a>
+                                <a href="#projects" class="w3-bar-item w3-button w3-hide-small"><i class="fa fa-th"></i> PROJECTS</a>
+                                <a href="#contact" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+                        </div>
+                </div>
+
+                <!-- First Parallax Image with Logo Text -->
+                <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
+                        <div class="w3-display-middle" style="white-space:nowrap;">
+                                <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">Hi! I'm Alisha.</span>
+                        </div>
+                </div>
+  
+  
+                <!-- Container (About Section) -->
+                <div class="w3-content w3-container w3-padding-64" id="about">
+                        <h1 class="w3-center">ABOUT ME</h1>
+                        <div class="w3-row">
+                                <div class="w3-col m6 w3-center w3-padding-large">
+                                        <p><b><i class="fa fa-user w3-margin-right"></i>Alisha Lakkad</b></p><br>
+                                        <img src="https://d1b10bmlvqabco.cloudfront.net/photos/j6voxxxh4mr2f1/1536090607_375.png" class="w3-round w3-image" alt="Photo of Me" width="300" height="133">
+                                </div>
+
+                                <!-- Hide this text on small devices -->
+                                <div class="w3-col m6 w3-hide-small w3-padding-large">
+                                        <p>Name: Alisha Lakkad<br>Age: 19<br>Date of Birth: August 10th, 1999<br>School: Purdue University<br>Majors: Computer Science and Data Science<br>Minor: Pychology <br> I was born in Seattle, WA but my family moved to India when I was 3 years old. I grew up in Pune, India, before coming to Purdue to pursue my undergraduate degree.I began programmng when I was in the 9th grade, as Computer Science was a part of my course curriculum. The logic and problem solving nature of this field made me opt for CS during my 11th and 12th grade in India. By the time I started collge applications, choosing CS as my major was a no-brainer becasue I really enjoyed it. After coming to Purdue, I got introduced to the field of Data Science. I was interested in the applications of Data Science and decided to take a class to see whether I wanted to add it as my major. One class was all I needed to confirm that I definitely wanted to do so.</p>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="w3-row w3-center w3-dark-grey w3-padding-16" onClick="viewResume()">
+                        <span class="w3-xlarge"><a href="https://drive.google.com/file/d/19AuxYOEf2DNcWbLnqfF8ZNbrF70ws87Z/view?usp=sharing">Resume</a></span><br>
+                        Click here to view my resume
+                </div>
+
+                <br><br>
+                <div class="w3-content w3-container w3-padding-64" id="campusinvolvements">
+                        <h1 class="w3-center">CAMPUS INVOLVEMENTS</h1><br>
+                        <!-- slide show again -->
+                        <div class="slideshow-container">
+
+                                <div class="mySlides fade">
+                                        <div class="numbertext">1 / 5</div>
+                                        <img src="https://scontent.fzty2-1.fna.fbcdn.net/v/t1.0-9/38708074_10156575843464116_9147936378024099840_n.jpg?_nc_cat=106&_nc_oc=AQkWIHGbupnFqSSYgDHc3AJKK1UlSbkDnmH44__PWoszUubgVukjj7PvgaY04Am5zdM&_nc_ht=scontent.fzty2-1.fna&oh=5675f633a2d04b790eb452677c2f92cc&oe=5DB386A9" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">Computer Science Bridge Program</mark></b></h3><mark style="background-color: white;">I was a teaching assistant for the Bridge Program 2018 which is a program meant to introduce the concepts of programming to  incoming freshman with no programming experience. We helped students during 2 two-hour lab session every day and occasionally held office hours to answer any other questions regarding Java.</div></mark>
+                                </div>
+
+                                <div class="mySlides fade">
+                                        <div class="numbertext">2 / 5</div>
+                                        <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.15752-9/s2048x2048/65926948_391646498371618_8492292689528619008_n.jpg?_nc_cat=100&_nc_oc=AQkjlzcn1tDuB6xDD2y_sTxX-Js3cxI5zt6-P2dhGKd9syuJyrLwz7MhG415a4biELg&_nc_ht=scontent-lga3-1.xx&oh=691a88367fdf723584c579a20d147c05&oe=5DB4C5A3" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">CSWN Puzzle Day Director</mark></b></h3><mark style="background-color: white;">I organized and hosted Puzzle Day 2019, which is an Annual event by the Computer Science Women's Network where students of all majors forms teams to compete in solving puzzles and an escape room, all made by the Puzzle Day team. A few of my responsibilties involved sponsorships, registration of participants, food, swag and the escape room.</mark></div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                        <div class="numbertext">3 / 5</div>
+                                        <img src="https://lh3.googleusercontent.com/_G62iQemYBF8ws-L3Ptp6H1JUO3UN5ehubvHd4pRccPwqxcX2vXavsiIia2yFBeD0fK-8Z_HtQLNe3VN9AIscrSxDprvKX2ISbrfnxOu1sqk-PpyjUpg4w-DCyMfBcZGk59zDZCFXTkbRR9trClKgity6v3mSN145gwOuw_6kjVPGfrszrHqaZPXOwrE9kbGUiL0ob0uCqgn4wksNlCI-olUwUgBnFbfGkXESQNmYIxnYGOQWjiJS26YOHLMnMGD2zJpxyAvWwIuQPpU_rW1jKq2dio3x79OGUo1czf-hDsuwTAa3GsPguptgvY3-8_amo0g9vx6EijuqEOieJvVwk0whBPdG0ggApPTR4pUSaWXkUsfhmnPhhNrCanQSccGftgVTp8i3qBI7Keb8F9GDjVLFNTpwN5HVJFkolaRS5o1037sS9C4cc2j1yftZ4lHVW1CI0fWsEnoXxEb35JCKelLVlJfgBfW-5YVOvLu7URWg3jDO44r7CFFrq0JZMraT3p6bVGWs5du847KujnnmRf2EWniircO-AlNs4YX-zFeittU_90czYuR7s_zd-euCFo94qU9G4n6Iln6eOAwRxrnciuE5qmbfGJmettSYEkJpnMYxv_m69LE-dHQ2v-1clsbenynkVBjwTDA9dOGYgGzyiN2bi0ZYvAVJNCgeVDRTQn26RWqFbg6BQW0jfTMtbCei_HvSaR9FJrS0rJ5q_6W=w2368-h1578-no" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">MiniMake Student - Mentor Coordinator</mark></b></h3><mark style="background-color: white;">MiniMake is a club that organizes a hackathon targetted for middle and high school students to get them interestd in the field of techonology and Computer Science. As a student - mentor coordinator I had to get mentors for these studnets and pair them with each other based on similar interests and strengths.</mark></div>
+                                </div>
+                          
+                               <!-- <span class="w3-hide-small">I'M</span> -->
+
+                <!-- Container (About Section) -->
+                <div class="w3-content w3-container w3-padding-64" id="about">
+                        <h1 class="w3-center">ABOUT ME</h1>
+                        <div class="w3-row">
+                                <div class="w3-col m6 w3-center w3-padding-large">
+                                        <p><b><i class="fa fa-user w3-margin-right"></i>Alisha Lakkad</b></p><br>
+                                        <img src="https://d1b10bmlvqabco.cloudfront.net/photos/j6voxxxh4mr2f1/1536090607_375.png" class="w3-round w3-image" alt="Photo of Me" width="300" height="133">
+                                </div>
+
+                                <!-- Hide this text on small devices -->
+                                <div class="w3-col m6 w3-hide-small w3-padding-large">
+                                        <p>Name: Alisha Lakkad<br>Age: 19<br>Date of Birth: August 10th, 1999<br>School: Purdue University<br>Majors: Computer Science and Data Science<br>Minor: Pychology <br> I was born in Seattle, WA but my family moved to India when I was 3 years old. I grew up in Pune, India, before coming to Purdue to pursue my undergraduate degree.I began programmng when I was in the 9th grade, as Computer Science was a part of my course curriculum. The logic and problem solving nature of this field made me opt for CS during my 11th and 12th grade in India. By the time I started collge applications, choosing CS as my major was a no-brainer becasue I really enjoyed it. After coming to Purdue, I got introduced to the field of Data Science. I was interested in the applications of Data Science and decided to take a class to see whether I wanted to add it as my major. One class was all I needed to confirm that I definitely wanted to do so.</p>
+                                </div>
+                        </div>
+                </div>
+
+                <div class="w3-row w3-center w3-dark-grey w3-padding-16" onClick="viewResume()">
+                        <span class="w3-xlarge"><a href="https://drive.google.com/file/d/19AuxYOEf2DNcWbLnqfF8ZNbrF70ws87Z/view?usp=sharing">Resume</a></span><br>
+                        Click here to view my resume
+                </div>
+
+                <br><br>
+                <div class="w3-content w3-container w3-padding-64" id="campusinvolvements">
+                        <h1 class="w3-center">CAMPUS INVOLVEMENTS</h1><br>
+                        <!-- slide show again -->
+                        <div class="slideshow-container">
+
+                                <div class="mySlides fade">
+                                        <div class="numbertext">1 / 5</div>
+                                        <img src="https://scontent.fzty2-1.fna.fbcdn.net/v/t1.0-9/38708074_10156575843464116_9147936378024099840_n.jpg?_nc_cat=106&_nc_oc=AQkWIHGbupnFqSSYgDHc3AJKK1UlSbkDnmH44__PWoszUubgVukjj7PvgaY04Am5zdM&_nc_ht=scontent.fzty2-1.fna&oh=5675f633a2d04b790eb452677c2f92cc&oe=5DB386A9" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">Computer Science Bridge Program</mark></b></h3><mark style="background-color: white;">I was a teaching assistant for the Bridge Program 2018 which is a program meant to introduce the concepts of programming to  incoming freshman with no programming experience. We helped students during 2 two-hour lab session every day and occasionally held office hours to answer any other questions regarding Java.</div></mark>
+                                </div>
+
+                                <div class="mySlides fade">
+                                        <div class="numbertext">2 / 5</div>
+                                        <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.15752-9/s2048x2048/65926948_391646498371618_8492292689528619008_n.jpg?_nc_cat=100&_nc_oc=AQkjlzcn1tDuB6xDD2y_sTxX-Js3cxI5zt6-P2dhGKd9syuJyrLwz7MhG415a4biELg&_nc_ht=scontent-lga3-1.xx&oh=691a88367fdf723584c579a20d147c05&oe=5DB4C5A3" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">CSWN Puzzle Day Director</mark></b></h3><mark style="background-color: white;">I organized and hosted Puzzle Day 2019, which is an Annual event by the Computer Science Women's Network where students of all majors forms teams to compete in solving puzzles and an escape room, all made by the Puzzle Day team. A few of my responsibilties involved sponsorships, registration of participants, food, swag and the escape room.</mark></div>
+                                </div>
+
+                                <div class="mySlides fade">
+                                        <div class="numbertext">3 / 5</div>
+                                        <img src="https://lh3.googleusercontent.com/_G62iQemYBF8ws-L3Ptp6H1JUO3UN5ehubvHd4pRccPwqxcX2vXavsiIia2yFBeD0fK-8Z_HtQLNe3VN9AIscrSxDprvKX2ISbrfnxOu1sqk-PpyjUpg4w-DCyMfBcZGk59zDZCFXTkbRR9trClKgity6v3mSN145gwOuw_6kjVPGfrszrHqaZPXOwrE9kbGUiL0ob0uCqgn4wksNlCI-olUwUgBnFbfGkXESQNmYIxnYGOQWjiJS26YOHLMnMGD2zJpxyAvWwIuQPpU_rW1jKq2dio3x79OGUo1czf-hDsuwTAa3GsPguptgvY3-8_amo0g9vx6EijuqEOieJvVwk0whBPdG0ggApPTR4pUSaWXkUsfhmnPhhNrCanQSccGftgVTp8i3qBI7Keb8F9GDjVLFNTpwN5HVJFkolaRS5o1037sS9C4cc2j1yftZ4lHVW1CI0fWsEnoXxEb35JCKelLVlJfgBfW-5YVOvLu7URWg3jDO44r7CFFrq0JZMraT3p6bVGWs5du847KujnnmRf2EWniircO-AlNs4YX-zFeittU_90czYuR7s_zd-euCFo94qU9G4n6Iln6eOAwRxrnciuE5qmbfGJmettSYEkJpnMYxv_m69LE-dHQ2v-1clsbenynkVBjwTDA9dOGYgGzyiN2bi0ZYvAVJNCgeVDRTQn26RWqFbg6BQW0jfTMtbCei_HvSaR9FJrS0rJ5q_6W=w2368-h1578-no" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">MiniMake Student - Mentor Coordinator</mark></b></h3><mark style="background-color: white;">MiniMake is a club that organizes a hackathon targetted for middle and high school students to get them interestd in the field of techonology and Computer Science. As a student - mentor coordinator I had to get mentors for these studnets and pair them with each other based on similar interests and strengths.</mark></div>
+                                </div>
+                          
+                           <div class="mySlides fade">
+                                        <div class="numbertext">4 / 5</div>
+                                        <img src="https://scontent.fzty2-1.fna.fbcdn.net/v/t1.15752-9/s2048x2048/41270701_176200826539127_6424040721304518656_n.jpg?_nc_cat=101&_nc_oc=AQkWAxsI77dJ3uAE7bdzvpwqPRD3SPpdpbbloozJUYBtp8KevUuLJkk3BepWwPKreLI&_nc_ht=scontent.fzty2-1.fna&oh=a3a0e24e6d5aed0197ffa42b98d21cca&oe=5D7D3558" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">Hello World Hackathon Organizer</mark></b></h3><mark style="background-color: white;">Purdue has a freshman only Hackathon called 'Hello World' held in September every year and I helped organize it in 2018. I was on the communications team and I coordinated all the mentors of the hackathon. I also moderated the 'WTF is a Hackahon' introduction panel, which is a workshop held in the week leading up to the hackathon.</mark></div>
+                                </div>
+
+
+                                <div class="mySlides fade">
+                                        <div class="numbertext">5 / 5</div>
+                                        <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.15752-9/s2048x2048/65923627_357942864884385_8425629574414467072_n.jpg?_nc_cat=105&_nc_oc=AQkPR4kFcgZlZEs5Jgz1fB3b7jtsmfYtRWqtgEt_j2b8ItCfFStj0MYhBWsAvge-_JM&_nc_ht=scontent-lga3-1.xx&oh=5db741c4112a1d240a68a5e5d11613a2&oe=5D8008E8" style="width:100%" height="650">
+                                        <div class="text"><h3><b><mark style="background-color: white;">Boiler Gold Rush Team Leader</mark></b></h3><mark style="background-color: white;">Boiler Gold Rush (BGR) is the biggest college orientation in the country. As a team leader for BGR 2018, I was responsible for 15 students for a week and showed them around Purdue and helped them settle in.</mark></div>
+                                </div>
+
+
+
+
+                                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                        </div>
+                        <br>
+
+                        <div style="text-align:center">
+                                <span class="dot" onclick="currentSlide(1)"></span>
+                                <span class="dot" onclick="currentSlide(2)"></span>
+                                <span class="dot" onclick="currentSlide(3)"></span>
+                                <span class="dot" onclick="currentSlide(4)"></span>
+                                <span class="dot" onclick="currentSlide(5)"></span>
+                        </div>
+                </div>
+                          
+                           <div class="w3-content w3-container w3-padding-64" id="projects">
+                  <h1 class="w3-center">PROJECTS</h1>
+                  <h5><b>LettuceCOOK</b></h5>
+
+                  <div class="w3-row">
+                          <div class="w3-col m6">
+                                  <div class="w3-margin-left">
+                                          This was team project which wedeveloped over the course of 3 months. It's an Android Application that suggests receipes using the Spoonacular API to households based on the ingredients present in their house. It does so by letting the user keep a track of their stock and grocery lists. The inspiration behind this app was the life of a college student. Anyone who lives such a fast paced life doesn'thave the time to think of what they can make for lunchor dinner. This way they can keep tabs on their grocery and see what recipes they can make with the ingedients available. We used Firebase and Firestore for the backend and server of this app. Some features of the application include:
+                                          <ul>
+                                                  <li>Create a household and invite other users to it</li>
+                                                  <li>Add grocery items to stock or grocery list and able to move them from onelist to the other</li>
+                                                  <li>Be able to send friend requests to other households and accept any friend requests</li>
+                                                  <li>Select ingredient and ask the app to suggest a recipe and then list the missing ingredients by comparing your stock and the ingredients of the recipe</li>
+                                                  <li>Ask friend household for ingredients or add the missing ingredient to the grocery list</li>
+                                                  <li>Save recipes to view later or share recipes with other households</li>
+                                                  <li>Invite friend households for dinner</li>
+                                                  <li>Be able to look up near by restaurants and grocery stores using the Google Maps API</li>
+                                          </ul>
+                                  </div>
+                          </div>
+                          <div class="w3-col m6" align="middle">
+                                <img src="https://scontent.fzty2-1.fna.fbcdn.net/v/t1.15752-0/p280x280/66448494_661871427613019_2446343376719577088_n.png?_nc_cat=111&_nc_oc=AQkiKbiww0IohQMGcudrqURm64YIR3oFJrm_0vL0yUaEkByKR2l9198X0wp1Zsx9uNU&_nc_ht=scontent.fzty2-1.fna&oh=dd9c056eccdea7445759dc627d45c8ae&oe=5DA9ED94" style="width:40%"></img>
+<br><br>
+                                  <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.15752-9/62787734_364045670970425_9027045564176400384_n.png?_nc_cat=108&_nc_oc=AQmrCEU8SpySm5mclREEWgIAbKSaPKAW-TJA_U6OYFGs5PJiINKdFHgWlAKxZnZWBzk&_nc_ht=scontent-lga3-1.xx&oh=8e95a5aa9cb932bdfd1a1dc365f6a01b&oe=5DAB2C5F" style="width:50%"></img>
+                          </div>
+                  </div>
+                  <br>
+                  <h5><b>Plan-it</b></h5>
+                  <div class="w3-row">
+                          <div class="w3-col m5">
+                                  <div class="w3-margin-left">
+                                          This was also a group project aimed to create a website that makes event managementand task assignment easy. When an event is created by a user, a unique randomized event code is created and has to be used for other users to join that event. Then, people in that event can create tasks and assign them to a person in that event. Once the tasks are completed, tasks can be marked as completed and they are added to a "Completed" list. My role in this project was to set up MongoDB Atlas to store any information entered by the user, write backend functions and server side code in Node.js and make sure the task are printed correctly and updated in real-time. This website can be viewed <a href="http://planit252.herokuapp.com/">here</a>
+                                  </div>
+                          </div>
+                          <div class="w3-col m7">
+                                  <div class="w3-margin-left">
+                                  <img src="https://scontent-lga3-1.xx.fbcdn.net/v/t1.15752-9/s2048x2048/66040762_621299981696167_7236084625976590336_n.png?_nc_cat=111&_nc_oc=AQll5XT4s3GVXWkZXmccXjIdcSnKhUkqxg-CxKznr_mJqOD9bGSo2zZe3FwU5_obAs4&_nc_ht=scontent-lga3-1.xx&oh=af3958fc0a9cda1e7cc21f72cbc982c2&oe=5DBCE802" style="width:100%"></img>
+                          </div>
+                        </div>
+                  </div>
+                  <br>
+                  <h5><b>Lyrico</b></h5>
+                                  <div class="w3-margin-left">
+                  I wanted to make this project because I had never programmed in Swift and I wanted explore a new language. I began making this project in a Hackathon and tried to learn this language from scratch. Over the course of the Hackthon my team and I developed an iOS game where the user has to match the song to its corresponding lyric. We had stored all the songs in a dictionary and displayed the correct option and 3 other randomized options. The app played an appropriate sound if the user got the question right or wrong. The user could also exit the game and view their final score during time part in the game.
+                        </div>
+                <br>
+  
+   <h5><b>Water-Tracker</b></h5>
+                <div class="w3-margin-left">
+                        This project was mainly aimed toward a problem I face myself. I barely stay hydrated and wanted to make an application that can help me track my water intake. Water-Tracker accounts for many brands of water bottles like Dasani and SmartWater and has a slider to indicate how much water I drink and calculates it in fl. oz. accordingly.
+                </div>
+                <br>
+                <h5><b>Other Projects</b></h5>
+                                  <div class="w3-margin-left">
+                Apart from these projects, I have also done projects which are a part of our class curriculum such as:
+                <ol>
+                        <li><u>Shell</u> - I created my own shell in C and C++ to execute commands such as ls, cd, grep, etc. LEX and YACC was used to parse any commands input by the user. I also implemented wildcards, subshell and pipes for the execution of my shell.</li>
+                        <li><u>Malloc implementation</u> - I wrote a malloc implementation in C and C++ to allocate memory and deallocate memory in a heap and call sbrk() to get a new block of memory when more was needed. We had to coalesce any adjacent free blocks and insert all unallocated blocks into a double linked list.</li>
+                        <li><u>Hash Map and Quadratic Probing</u> - We implemented the concepts of hash maping and quadratic probing in Java, to insert, traverse through and manipulate data.</li>
+                        <li><u>Family Tree</u> - In this project we were required to create a binary tree and create a family tree based on the data given. We also had to use algorithms such as BFS and DFS to find the closest common ancestors between two family members.</li>
+                        <li><u>Hardware and coding in Assembly</u> - We made a traffic light using decoders, capacitors, resistors, etc on a breadboard. We implemented fibonacci, insertion sort and substring in Assembly. We also coded the printf function in Assembly and C. </li>
+                </ol>
+                </div>
+
+          </div>
+
+          <!-- Container (Contact Section) -->
+          <div class="w3-content w3-container w3-padding-64" id="contact">
+                  <h1 class="w3-center">SEND ME A MESSAGE</h1>
+                  <p class="w3-center"><em>I'd love to talk to you!</em></p>
+
+                  <div class="w3-row w3-padding-32 w3-section" align="middle">
+                <!--      <div class="w3-col m4 w3-container">
+                                  <img src="/w3images/map.jpg" class="w3-image w3-round" style="width:100%">
+                          </div>-->
+
+                                  <div class="w3-large w3-margin-bottom">
+                                          <i class="fa fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Purdue University, West Lafayette, IN<br>
+                                          <i class="fa fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Phone: 765-475-6088<br>
+                                          <i class="fa fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i> Email: alakkad@purdue.edu<br>
+                                  </div>
+                                  <p>Swing by for a cup of <i class="fa fa-coffee"></i>, or leave me a note:</p>
+                    
+                     <form action="mailto:alakkad@purdue.edu" method="post" enctype="text/plain">
+                                          <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                                                  <div class="w3-half">
+                                                          <input class="w3-input w3-border" type="text" placeholder="Name" required name="Name">
+                                                  </div>
+                                                  <div class="w3-half">
+                                                          <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                                                  </div>
+                                          </div>
+                                          <input class="w3-input w3-border" type="text" placeholder="Message" required name="Message">
+                                          <button class="w3-button w3-black w3-center w3-section" type="submit">
+                                                  <i class="fa fa-paper-plane"></i> SEND MESSAGE
+                                          </button>
+                                </form>
+                  </div>
+          </div>
+
+          <!-- Footer -->
+          <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
+                  <a href="#home" class="w3-button w3-light-grey"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+                  <div class="w3-xlarge w3-section">
+                        Connect with me!<br>
+                <!--      <i class="fa fa-facebook-official w3-hover-opacity"></i> -->
+                          <a href="https://www.github.com/alishalakkad"><i class="fa fa-github w3-hover-opacity"></i></a>
+                          <a href="https://www.linkedin.com/in/alishalakkad/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+                  </div>
+          </footer>
+
+          <script>
+                  // Modal Image Gallery
+                  function onClick(element) {
+                          document.getElementById("img01").src = element.src;
+                          document.getElementById("modal01").style.display = "block";
+                          var captionText = document.getElementById("caption");
+                          captionText.innerHTML = element.alt;
+                  }
+
+// Change style of navbar on scroll
+window.onscroll = function() {myFunction()};
+function myFunction() {
+        var navbar = document.getElementById("myNavbar");
+        if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+        } else {
+                navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+        }
+}
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function toggleFunction() {
+        var x = document.getElementById("navDemo");
+        if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+        } else {
+                x.className = x.className.replace(" w3-show", "");
+        }
+}
+            
+            ///slide show
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+        showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+        showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+}
+
+
+          </script>
+
+        </body>
+</html>
+~
+
+
+
+
+
+
+
+
+
 
